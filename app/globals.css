@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: 200 17.5% 36.5%; /* #4A6670 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 41% 35%; /* #306073 */
+    --secondary-foreground: 0 0% 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 199 41% 15%;
+
+    --muted: 200 17.5% 97%;
+    --muted-foreground: 199 41% 45%;
+
+    --accent: 199 41% 96%;
+    --accent-foreground: 199 41% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 199 41% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 199 41% 15%;
+
+    --border: 199 41% 85%;
+    --input: 199 41% 85%;
+    --ring: 200 17.5% 36.5%;
+
+    --hover-accent: 348.8 85.4% 40.4%; /* #BF0F30 */
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --primary: 200 17.5% 36.5%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 41% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --background: 199 41% 8%;
+    --foreground: 199 41% 98%;
+
+    --muted: 200 17.5% 15%;
+    --muted-foreground: 199 41% 65%;
+
+    --accent: 199 41% 15%;
+    --accent-foreground: 199 41% 85%;
+
+    --card: 199 41% 10%;
+    --card-foreground: 199 41% 98%;
+
+    --popover: 199 41% 10%;
+    --popover-foreground: 199 41% 98%;
+
+    --border: 199 41% 25%;
+    --input: 199 41% 25%;
+    --ring: 200 17.5% 36.5%;
+
+    --hover-accent: 348.8 85.4% 40.4%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Add hover accent utility class */
+.hover-border-accent {
+  @apply transition-all duration-300;
+}
+.hover-border-accent:hover {
+  border-color: hsl(var(--hover-accent) / 0.5);
+  box-shadow: 0 0 0 1px hsl(var(--hover-accent) / 0.1);
+}
+
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: linear-gradient(
+      to right,
+      rgba(48, 96, 115, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(48, 96, 115, 0.1) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(74, 102, 112, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(74, 102, 112, 0.1) 1px, transparent 1px);
+}
